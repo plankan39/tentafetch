@@ -16,8 +16,6 @@ with open('schema.ics', 'r') as ics:
             day = str(dt.day)
             day = day if len(day) > 1 else '0'+day
             with open('tentor/%s_%s_%s_%s.pdf' % (CODE, year, month, day), 'wb') as f:
-                f.write(requests.get(URL %
-                                     (year, month, day), stream=True).content)
+                f.write(requests.get(URL % (year, month, day), stream=True).content)
             with open('tentor/%s_%s_%s_%sSOL.pdf' % (CODE, year, month, day), 'wb') as f:
-                f.write(requests.get(URLSOL %
-                                     (year, month, day), stream=True).content)
+                f.write(requests.get(URLSOL % (year, month, day), stream=True).content)
